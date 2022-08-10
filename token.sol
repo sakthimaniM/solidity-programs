@@ -1,9 +1,9 @@
 pragma solidity ^0.5.0;
 //--------------------------------------
-// AME Token contract
+// CRX Token contract
 //
-// Symbol : AME
-// Name : AME Token
+// Symbol : CRX
+// Name : COREX Token
 // Total supply: 1500000000
 // Decimals : 18
 //--------------------------------------
@@ -40,7 +40,7 @@ require(b > 0);
 c = a / b;
 }
 }
-contract AME is ERC20Interface, SafeMath{
+contract COREX is ERC20Interface, SafeMath{
 bytes32 public name;
 bytes32 public symbol;
 uint8 public decimals;
@@ -50,8 +50,8 @@ address private owner;
 mapping(address => uint) balances;
 mapping(address => mapping(address => uint)) allowed;
 constructor() public {
-name = "AME Token";
-symbol = "AME";
+name = "COREX Token";
+symbol = "CRX";
 decimals = 18;
 _totalSupply = 1500000000 * 10 ** uint256(decimals);
 initialSupply = _totalSupply;
@@ -93,7 +93,6 @@ function mint(uint256 tokens) public returns(bool success){
        require(owner == msg.sender, 'This is not owner');
        balances[msg.sender] = safeAdd(balances[msg.sender], tokens);
        _totalSupply = safeAdd(tokens, _totalSupply);
-       
        return true;
    }
 
