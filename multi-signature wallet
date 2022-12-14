@@ -1,0 +1,25 @@
+pragma solidity ^0.5.0;
+
+contract MultiSigWallet {
+    address[] public signatories;
+
+    // minimum percentage of signatures required to perform a transaction
+    uint256 public requiredPercentage;
+    
+    constructor(address[] memory _signatories, uint256 _requiredPercentage) public {
+        signatories = _signatories;
+        requiredPercentage = _requiredPercentage;
+    }
+
+    function requestTransaction(address to, uint256 value) public {
+        // TODO: Implement function
+    }
+    
+    function confirmTransaction(uint256 transactionId) public {
+    }
+
+    // Function to execute a transaction
+    function executeTransaction(uint256 transactionId) public {
+        // TODO: Implement function
+    }
+}
